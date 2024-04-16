@@ -17,48 +17,6 @@
     align-items: center;
 }
 
-.button-magenta{
-    display: inline-block;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #fff; 
-    background-color: #fb226b; 
-    border-color: #fb226b; 
-}
-
-.button-cyan{
-    display: inline-block;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #00bec7; 
-    background-color: #fff; 
-    border-color: #00bec7; 
-}
-.button-cyan:hover{
-    color: #ffffff; 
-    background-color: #00bec7; 
-    border-color: #00bec7; 
-    transition: all 0.3s ease;
-}
-
 .bg-color-magenta{
     background-color: #fb226b;
 }
