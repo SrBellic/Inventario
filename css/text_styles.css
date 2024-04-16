@@ -1,0 +1,12 @@
+.link-gray{
+    color: #c2c2c2;
+    text-decoration: none;
+}
+.link-gray:hover{
+    text-decoration: underline;
+}
+
+.link-white{
+    color: #fff;
+    text-decoration: none;
+}
