@@ -20,9 +20,11 @@
 .bg-color-magenta{
     background-color: #fb226b;
 }
+.bg-color-darkmagenta{
+    background-color: #db1d5d;
+}
 
 .bg-color-gray{
     background-color: #3b3b3b;
     color: #c2c2c2;
 }
-

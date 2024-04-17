@@ -88,6 +88,30 @@
     border-color: #E80D0D;
     transition: all 0.3s ease;
 }
+.button-sm-delete{
+    width: 50px; /* Diámetro inicial de la circunferencia */
+    height: 50px; /* Diámetro inicial de la circunferencia */
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #E80D0D; /* Color de fondo del botón */
+    border-color: #E80D0D;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+.button-sm-delete:hover{
+    width: 130px; /* Ancho del botón expandido */
+    height: 50px; /* Altura del botón expandido */
+    border-radius: 25px; /* Redondear los extremos del botón expandido */
+    color: #fff;
+    background-color: #E80D0D; /* Color de fondo del botón */
+    border-color: #E80D0D;
+    transition: all 0.3s ease;
+}
 
 .texto {
     display: none; /* Ocultar el texto por defecto */
@@ -102,6 +126,12 @@
     display: inline; /* Mostrar el texto cuando se hace hover */
 }
 .button-delete:hover .caracter{
+    display: none;
+}
+.button-sm-delete:hover .texto {
+    display: inline; /* Mostrar el texto cuando se hace hover */
+}
+.button-sm-delete:hover .caracter{
     display: none;
 }
 
@@ -129,10 +159,41 @@
     border-color: #63b51a;
     transition: all 0.3s ease;
 }
+.button-sm-add {
+    width: 50px; /* Diámetro inicial de la circunferencia */
+    height: 50px; /* Diámetro inicial de la circunferencia */
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #63b51a; /* Color de fondo del botón */
+    border-color: #63b51a;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+.button-sm-add:hover {
+    width: 130px; /* Ancho del botón expandido */
+    height: 50px; /* Altura del botón expandido */
+    border-radius: 25px; /* Redondear los extremos del botón expandido */
+    color: #fff;
+    background-color: #63b51a; /* Color de fondo del botón */
+    border-color: #63b51a;
+    transition: all 0.3s ease;
+}
+
 .button-add:hover .texto {
     display: inline; /* Mostrar el texto cuando se hace hover */
 }
 .button-add:hover .caracter{
+    display: none;
+}
+.button-sm-add:hover .texto {
+    display: inline; /* Mostrar el texto cuando se hace hover */
+}
+.button-sm-add:hover .caracter{
     display: none;
 }
 
@@ -160,10 +221,41 @@
     border-color: #03c2ca;
     transition: all 0.3s ease;
 }
+.button-sm-edit {
+    width: 50px; /* Diámetro inicial de la circunferencia */
+    height: 50px; /* Diámetro inicial de la circunferencia */
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #03c2ca; /* Color de fondo del botón */
+    border-color: #03c2ca;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+.button-sm-edit:hover {
+    width: 130px; /* Ancho del botón expandido */
+    height: 50px; /* Altura del botón expandido */
+    border-radius: 25px; /* Redondear los extremos del botón expandido */
+    color: #fff;
+    background-color: #03c2ca; /* Color de fondo del botón */
+    border-color: #03c2ca;
+    transition: all 0.3s ease;
+}
+
 .button-edit:hover .texto {
     display: inline; /* Mostrar el texto cuando se hace hover */
 }
 .button-edit:hover .caracter{
+    display: none;
+}
+.button-sm-edit:hover .texto {
+    display: inline; /* Mostrar el texto cuando se hace hover */
+}
+.button-sm-edit:hover .caracter{
     display: none;
 }
 
