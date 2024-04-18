@@ -115,6 +115,8 @@
 
 .texto {
     display: none; /* Ocultar el texto por defecto */
+    background: none;
+    border: none;
 }
 
 .caracter {
