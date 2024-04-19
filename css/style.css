@@ -17,6 +17,11 @@
     align-items: center;
 }
 
+.modal-scroll {
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+
 .bg-color-magenta{
     background-color: #fb226b;
 }
