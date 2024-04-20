@@ -1,3 +1,8 @@
+<?php
+    require_once "../config/conexionDB.php";
+    include '../config/tablas.php';
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,6 +30,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="d-flex justify-content-end text-end mx-5">
                 <div class="navbar-nav bg-color-darkmagenta ps-5 pe-2 py-2 rounded-bottom">
+                    <a href="root_users.html" class="link-white me-1 fs-5">Administración de Personal<img src="../assets/favicons/system/users24x24.png" class="ms-1 mb-2" alt="Administracion de Usuarios"></a>
                     <a href="../index.html" class="link-white fs-5">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
                 </div>
             </div>
@@ -100,7 +106,7 @@
                         </div>
                     </section>
 
-                    <input type="text" id="search" class="form-control-lg w-100 border shadow mb-2" placeholder="Buscar">
+                    <input type="text" id="search" class="form-control shadow mb-2" placeholder="Buscar...">
                     <table id="tabla" class="table table-responsive table-hover border shadow">
                         <thead class="text-center">
                             <tr>
@@ -114,33 +120,9 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            <tr>
-                                <td>000</td>
-                                <td>gorras</td>
-                                <td>001</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
-                            <tr>
-                                <td>000</td>
-                                <td>Camisas</td>
-                                <td>00#</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
-                            <tr>
-                                <td>000</td>
-                                <td>Termos</td>
-                                <td>00#</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
+                            <?php 
+                                llenar_inventario($conn);
+                            ?>
                         </tbody>
                     </table>
                 </section>

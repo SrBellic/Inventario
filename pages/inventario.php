@@ -1,3 +1,7 @@
+<?php
+    require_once "../config/conexionDB.php";
+    include '../config/tablas.php';
+?>  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +25,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"> 
                         <div class="navbar-nav">
-                            <a href="../index.html" class="nav-link text-white fs-3">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
+                            <a href="../index.php" class="nav-link text-white fs-3">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
                         </div>
                     </div>
                 </div>
@@ -48,30 +52,9 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            <tr>
-                                <td>gorras</td>
-                                <td>001</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
-                            <tr>
-                                <td>Camisas</td>
-                                <td>00#</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
-                            <tr>
-                                <td>Termos</td>
-                                <td>00#</td>
-                                <td>PROVEEDOR</td>
-                                <td>$$$</td>
-                                <td>BsBsBs</td>
-                                <td>####</td>
-                            </tr>
+                            <?php 
+                                llenar_inventario($conn);
+                            ?>
                         </tbody>
                     </table>
                 </section>
