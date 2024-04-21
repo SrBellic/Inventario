@@ -103,6 +103,21 @@
     border-color: #E80D0D;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
 }
+.button-mini-delete{
+    width: 34px; /* Diámetro inicial de la circunferencia */
+    height: 34px; /* Diámetro inicial de la circunferencia */
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #E80D0D; /* Color de fondo del botón */
+    border-color: #E80D0D;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
 .button-sm-delete:hover{
     width: 130px; /* Ancho del botón expandido */
     height: 50px; /* Altura del botón expandido */
@@ -246,6 +261,21 @@
     background-color: #03c2ca; /* Color de fondo del botón */
     border-color: #03c2ca;
     transition: all 0.3s ease;
+}
+.button-mini-edit{
+    width: 34px; /* Diámetro inicial de la circunferencia */
+    height: 34px; /* Diámetro inicial de la circunferencia */
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #03c2ca; /* Color de fondo del botón */
+    border-color: #03c2ca;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .button-edit:hover .texto {

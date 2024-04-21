@@ -2,6 +2,25 @@
     border:2px solid #fb226b;
 }
 
+.max{
+    max-width: 700px;
+    width: 100%;
+}
+.max-tabla{
+    max-width: 700px;
+    width: auto;
+}
+
+.modal-xl {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.modal-body {
+    overflow-x: hidden;
+    /* Deshabilitar desplazamiento horizontal en el modal */
+}
+
 .item-div{
     display: flex;
     justify-content: space-evenly;
@@ -18,6 +37,10 @@
 }
 
 .modal-scroll {
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+.modal-scroll-x{
     max-height: 400px; 
     overflow-y: auto; 
 }
