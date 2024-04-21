@@ -40,9 +40,13 @@
     max-height: 400px; 
     overflow-y: auto; 
 }
+.scroll-short{
+    max-height: 300px;
+    overflow-y: auto;
+}
 .modal-scroll-x{
     max-height: 400px; 
-    overflow-y: auto; 
+    overflow-x: auto; 
 }
 
 .bg-color-magenta{

@@ -64,6 +64,22 @@
     transition: all 0.3s ease;
 }
 
+.button-magenta{
+    width: 24px; /* Diámetro inicial de la circunferencia */
+    height: 24px; /* Diámetro inicial de la circunferencia */
+    border-radius: 14%; /* Hacer el botón circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s;
+    color: #fff;
+    background-color: #fb226b; /* Color de fondo del botón */
+    border-color: #fb226b;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
 .button-delete {
     width: 50px; /* Diámetro inicial de la circunferencia */
     height: 50px; /* Diámetro inicial de la circunferencia */

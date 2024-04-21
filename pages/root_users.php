@@ -133,6 +133,8 @@
                         </tbody>
                     </table>
                 </section>
+                <!--Todos estamos modales desde aqui hasta la linea 433 estan en uso
+                Inicia aqui-->
             </div>
 
             <!--Modal Label-->
@@ -303,6 +305,7 @@
                             </tbody>
                         </table>
                         </div>
+
                         <div class="modal-footer d-flex justify-content-center">
                             <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
                                 <div class="contenido">
@@ -355,6 +358,8 @@
                 </div>
             </div>
         </main>
+
+        <!--Registro de usuarios-->
         <div class="modal fade" id="userAdd" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -363,10 +368,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="#">
+                    <form action="#" method="post">
                         <select class="form-select" name="usuario">
                             <option value="1">Empleado</option>
-                            <option value="2">Administrador</option>
+                            <option value="2">Administrador</op tion>
                             <option value="3">Root</option>
                         </select>
                         <br>
@@ -401,22 +406,23 @@
                                 <br>
                             </div>
                         </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
+                                <div class="contenido">
+                                    <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/cross30.png" width="30px"></span>
+                                    <input type="reset" class="texto fw-bold" style="color: white;" value="CANCELAR">
+                                </div>
+                            </button>
+                            <button class="button-add fw-bold">
+                                <div class="contenido">
+                                    <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/check24x24.svg" width="30px"></span>
+                                    <input type="submit" class="texto fw-bold" style="color: white;" id="agregar" value="CONFIRMAR">
+                                </div>
+                            </button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
-                        <div class="contenido">
-                            <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/cross30.png" width="30px"></span>
-                            <input type="reset" class="texto fw-bold" style="color: white;" value="CANCELAR">
-                        </div>
-                    </button>
-                    <button class="button-add fw-bold">
-                        <div class="contenido">
-                            <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/check24x24.svg" width="30px"></span>
-                            <input type="submit" class="texto fw-bold" style="color: white;" id="agregar" value="CONFIRMAR">
-                        </div>
-                    </button>
-                </div>
+                
             </div>
         </div>
         <div class="modal fade" id="borrar" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -514,6 +520,8 @@
                 </div>
                 </div>
             </div>
+        <!--Termina aqui-->
+
         <script src="../js/button_edit.js"></script>
         <script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
         <script src="../js/search.js"></script>
