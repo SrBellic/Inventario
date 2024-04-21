@@ -1,3 +1,7 @@
+<?php
+    require_once "../config/conexionDB.php";
+    include '../config/tablas.php';
+?>  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -123,34 +127,15 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            <tr>
-                                <td>root</td>
-                                <td>Diego</td>
-                                <td>Torres</td>
-                                <td>Usuario</td>
-                                <td>example@mail.com</td>
-                                <td>30.000.000</td>
-                            </tr>
-                            <tr>
-                                <td>admin</td>
-                                <td>Diego</td>
-                                <td>Torres</td>
-                                <td>Usuario</td>
-                                <td>example@mail.com</td>
-                                <td>30.000.000</td>
-                            </tr>
-                            <tr>
-                                <td>empleado</td>
-                                <td>Diego</td>
-                                <td>Torres</td>
-                                <td>Usuario</td>
-                                <td>example@mail.com</td>
-                                <td>30.000.000</td>
-                            </tr>
+                            <?php
+                            llenar_usuarios($conn);
+                            ?>
                         </tbody>
                     </table>
                 </section>
             </div>
+
+            <!--Modal Label-->
             <div class="modal fade" id="borrar" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -397,6 +382,11 @@
                                     <label for="user" class="form-label">Usuario</label>
                                 </div>
                                 <br>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" placeholder="Cedula" name="ci">
+                                    <label for="ci" class="form-label">Cedula</label>
+                                </div>
+                                <br>
                             </div>
                             <div class="col-6">
                                 <div class="form-floating">
@@ -463,7 +453,8 @@
                                     <td>
                                         <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
                                             <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
+                                                <span class="car
+                                                acter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
                                                 <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
                                             </div>
                                         </button>

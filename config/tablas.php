@@ -20,4 +20,21 @@ function llenar_inventario($conn){
             </tr>';
     }
 }
+function llenar_usuarios($conn){
+    $consulta = "SELECT `tipo_usuario`,`nombre`,`apellido`,`usuario`,`correo`,`cedula` 
+    FROM `usuarios` WHERE 1";
+    //Se ejecuta la consulta
+    $resultado = $conn->query($consulta);
+    while ($users = $resultado->fetch(PDO::FETCH_ASSOC)) {
+        echo '<tr>
+            <td>'.$users["tipo_usuario"].'</td>
+            <td>'.$users["nombre"].'</td>
+            <td>'.$users["apellido"].'</td>
+            <td>'.$users["usuario"].'</td>
+            <td>'.$users["correo"].'</td>
+            <td>'.$users["cedula"].'</td>
+        </tr>';
+    }
+
+}
 ?>

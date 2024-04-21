@@ -1,6 +1,7 @@
 <?php
     require_once "../config/conexionDB.php";
     include '../config/tablas.php';
+    include '../config/botones.php';
 ?>  
 
 <!DOCTYPE html>
@@ -89,6 +90,8 @@
                         <section class="container text-center ms-1 d-sm-block">
                             <div class="row ms-5 mb-2">
                                 <div class="col d-lg-none mt-2">
+
+
                                     <button class="button-sm-add fw-bold" data-bs-target="#add"  data-bs-toggle="modal">
                                         <div class="contenido">
                                           <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/add32x32.png"></span>
@@ -103,6 +106,8 @@
                                           <span class="texto fs-5">EDITAR</span>
                                         </div>
                                     </button>
+
+
                                 </div>
                                 <div class="col d-lg-none my-2">
                                     <button class="button-sm-delete fw-bold" data-bs-target="#del" data-bs-toggle="modal">
@@ -129,7 +134,6 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-
                             <?php 
                                 llenar_inventario($conn);
                             ?>
