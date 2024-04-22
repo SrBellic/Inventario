@@ -27,11 +27,13 @@ function validaciones_registro($mail, $user, $ci, $name, $apellido){
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL) || strlen($mail) < 10 ||
             strlen($mail) > 255 || preg_match("/[,;'´`\"\\s]/", $mail)) {
             $error = 'El correo electronico es invalido';}
-            
+
+        return $error;    
+
     }else{
         $error = "No se han llenado todos los datos correctamente";
+        return $error;
     }
-    return $error;
 }
 
 //Se genera una contraseña aleatoria
@@ -126,12 +128,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Se llama una funcion para validar los campos
     $error = validaciones_registro($mail, $user, $ci, $name, $apellido);
     if($error == null){
-        $pass = pass_aleatoria();
+        $pass = pass_aleatoria(); //Esta es la contraseña generada
         $passEncript = encriptacion($pass);
-        $registro_resultado = cargar_bd($conn, $usuario,$mail, $user, $ci, $name, $apellido, $passEncript);
+        $registro_resultado = cargar_bd($conn, $usuario,$mail, $user, $ci, $name, $apellido, $passEncript); //Resultados de la bd
     }
-
-    echo $pass."<br>";
-    echo $registro_resultado;
+    //La variable $error es la que debes imprimir en caso de fallo
 }
 ?>

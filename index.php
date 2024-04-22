@@ -1,5 +1,6 @@
 <?php
     require_once "config/conexionDB.php";
+    include 'config/validarUsuario.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
                             </picture>
                             <section class="col mx-2 py-5">
                                 <h2 class="text-center">Inicia Sesión</h2>
-                                <form action="#" class="my-4">
+                                <form action="#" method="post" class="my-4">
                                     <label for="user" class="form-label fs-4">Usuario<img src="assets/favicons/system/user32x32.png" class="mb-1 " width="24px"></label>
                                     <input type="text" class="form-control bg-white shadow my-2" name="user">
                                     <label for="pass" class="form-label fs-4">Contraseña<img src="assets/favicons/system/pass32x32.png" class="mb-1 ms-1" width="24px"></label>

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/text_styles.css">
         <link rel="stylesheet" href="../css/border_style.css">
-        <link rel="stylesheet" href="../css/button_styles.css"
+        <link rel="stylesheet" href="../css/button_styles.css">
         <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <title>Inventario</title>
     </head>
