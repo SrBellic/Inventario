@@ -15,7 +15,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -25,15 +25,16 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('srbellic11@gmail.com', 'Mailer');
-    $mail->addAddress('diegoandresdejesus@gmail.com', 'Diego');     //Add a recipient
+    $mail->setFrom('srbellic11@gmail.com', 'Deisanarte');
+    $mail->addAddress($email, 'Diego');     //Add a recipient
 
     //Attachments
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Subject = 'Contraseña nueva';
+    $mail->Body    = '<h1 class="text-center fw-bold">Nombre de usuario: '.$name.'</h1><br>
+    <h1 class="text-center fw-bold">Contraseña nueva: '.$pass.'</h1>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

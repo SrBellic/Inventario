@@ -360,7 +360,6 @@
             </div>
         </main>
 
-        <!--Registro de usuarios-->
         <div class="modal fade" id="userAdd" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -369,18 +368,20 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
+                    <!--Registro de usuarios-->
                     <form action="#" method="post">
                         <select class="form-select" name="usuario">
                             <option value="1">Empleado</option>
-                            <option value="2">Administrador</op tion>
+                            <option value="2">Administrador</option>
                             <option value="3">Root</option>
                         </select>
                         <br>
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" placeholder="Correo Electrónico" name="mail">
-                                    <label for="mail" class="form-label">Correo Electrónico</label>
+                                    <input type="text" class="form-control" placeholder="Correo Electrónico" name="email">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
                                 </div>
                                 <br>
                                 <div class="form-floating">
@@ -422,8 +423,9 @@
                             </button>
                         </div>
                     </form>
+                    <!--Finaliza el registro de usuario-->
+
                 </div>
-                
             </div>
         </div>
         <div class="modal fade" id="borrar" aria-labelledby="exampleModalLabel" aria-hidden="true">

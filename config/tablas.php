@@ -15,7 +15,7 @@ function llenar_inventario($conn){
                 <td>'.$producto["codigo_producto"].'</td>
                 <td>'.$producto["proveedores"].'</td>
                 <td>'.$producto["precio_proveedor"]."$".'</td>
-                <td>'.$producto["precio_venta"]."Bs".'</td>
+                <td>'.$producto["precio_venta"]."$".'</td>
                 <td>'.$producto["stock"].'</td>
             </tr>';
     }
@@ -36,4 +36,25 @@ function llenar_usuarios($conn){
         </tr>';
     }
 }
+
+//Esta funcion muestra las sucurles durante el registro
+function traer_sucursal($conn){
+    $consulta = "SELECT `id_sucursal`,`sucursal` FROM `sucursales` WHERE 1";
+    //Se ejecuta la consulta
+    $resultado = $conn->query($consulta);
+    while ($sucur= $resultado->fetch(PDO::FETCH_ASSOC)) {
+        echo '<option value='.$sucur["id_sucursal"].'>'.$sucur["sucursal"].'</option>';
+    }
+}
+
+//Esta funcion muestra los proveedores durante el registro
+function traer_proveedores($conn){
+    $consulta = "SELECT `id_proveedores`,`proveedores` FROM `proveedores` WHERE 1";
+    //Se ejecuta la consulta
+    $resultado = $conn->query($consulta);
+    while ($prov= $resultado->fetch(PDO::FETCH_ASSOC)) {
+        echo '<option value='.$prov["id_proveedores"].'>'.$prov["proveedores"].'</option>';
+    }
+}
+
 ?>

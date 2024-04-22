@@ -1,10 +1,10 @@
 <?php
 //Funcion que valida los datos
-function validaciones_registro($mail, $user, $ci, $name, $apellido){
+function validaciones_registro($email, $user, $ci, $name, $apellido){
     
     $error = null;
     //Verifica que no enviaran ningun campo vacio
-    if(!empty($_POST['mail']) &&!empty($_POST['user']) && !empty($_POST['ci']) 
+    if(!empty($_POST['email']) &&!empty($_POST['user']) && !empty($_POST['ci']) 
     &&!empty($_POST['name']) &&!empty($_POST['apellido'])){
 
         //Valida que el nombre y apellido no contenga numeros o caracteres especiales    
@@ -24,8 +24,8 @@ function validaciones_registro($mail, $user, $ci, $name, $apellido){
             $error = 'El nombre de usuario pasa el límite de caracteres (30), contiene espacios en blanco o caracteres no permitidos';}      
         
         //Valida el correo
-        if (!filter_var($mail, FILTER_VALIDATE_EMAIL) || strlen($mail) < 10 ||
-            strlen($mail) > 255 || preg_match("/[,;'´`\"\\s]/", $mail)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) < 10 ||
+            strlen($email) > 255 || preg_match("/[,;'´`\"\\s]/", $email)) {
             $error = 'El correo electronico es invalido';}
 
         return $error;    
@@ -54,7 +54,7 @@ function encriptacion($pass){
     return $passEncript;
 }
 
-function cargar_bd($conn,$usuario,$mail, $user, $ci, $name, $apellido, $passEncript){
+function cargar_bd($conn,$usuario,$email, $user, $ci, $name, $apellido, $passEncript){
     $error = null;
 
     // Verificar si el usuario ya existe
@@ -78,9 +78,9 @@ function cargar_bd($conn,$usuario,$mail, $user, $ci, $name, $apellido, $passEncr
     }
 
     // Verificar si el correo electrónico ya existe
-    $query = "SELECT * FROM usuarios WHERE correo = :mail";
+    $query = "SELECT * FROM usuarios WHERE correo = :email";
     $statement = $conn->prepare($query);
-    $statement->execute(array(":mail" => $mail));
+    $statement->execute(array(":email" => $email));
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
     if ($row) {
@@ -90,10 +90,10 @@ function cargar_bd($conn,$usuario,$mail, $user, $ci, $name, $apellido, $passEncr
         try {
             // Insertar el nuevo usuario en la tabla tabla_usuarios con tipo de usuario 'user' (ID 1)
             $query = "INSERT INTO `usuarios`( `usuario`, `contraseña`, `nombre`, `apellido`, `cedula`, `correo`, `tipo_usuario`) 
-            VALUES (:usuario, :passEncript, :nombre, :apellido, :ci, :mail, :tipo_user)";
+            VALUES (:usuario, :passEncript, :nombre, :apellido, :ci, :email, :tipo_user)";
             $statement = $conn->prepare($query);
             $result = $statement->execute(array(":usuario"=>$user,":passEncript"=>$passEncript,
-            ":nombre" => $name, ":apellido" => $apellido, ":ci" => $ci, ":mail" => $mail,
+            ":nombre" => $name, ":apellido" => $apellido, ":ci" => $ci, ":email" => $email,
             ":tipo_user"=>$usuario));
 
             if ($result) {
@@ -113,7 +113,7 @@ function cargar_bd($conn,$usuario,$mail, $user, $ci, $name, $apellido, $passEncr
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Recibe los datos del usuario para registrarlo
     $usuario = $_POST["usuario"];
-    $mail = $_POST["mail"];
+    $email = $_POST["email"];
     $user = $_POST["user"];
     $ci = $_POST["ci"];
     $name = $_POST["name"];
@@ -126,11 +126,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     };
 
     //Se llama una funcion para validar los campos
-    $error = validaciones_registro($mail, $user, $ci, $name, $apellido);
+    $error = validaciones_registro($email, $user, $ci, $name, $apellido);
     if($error == null){
         $pass = pass_aleatoria(); //Esta es la contraseña generada
         $passEncript = encriptacion($pass);
-        $registro_resultado = cargar_bd($conn, $usuario,$mail, $user, $ci, $name, $apellido, $passEncript); //Resultados de la bd
+        $registro_resultado = cargar_bd($conn, $usuario,$email, $user, $ci, $name, $apellido, $passEncript); //Resultados de la bd
+        include ('PHPMailer-master/index.php');
     }
     //La variable $error es la que debes imprimir en caso de fallo
 }

@@ -128,8 +128,8 @@
                                 <th>Producto</th>
                                 <th>Código</th>
                                 <th>Proveedor</th>
-                                <th>Precio $</th>
-                                <th>Precio Bs</th>
+                                <th>Precio proveedor</th>
+                                <th>Precio venta</th>
                                 <th>Cantidad Disponible</th>
                             </tr>
                         </thead>
@@ -153,18 +153,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body modal-scroll">
+                        
+                        <!--Formulario de registro de producto-->
                         <form action="#">
                             <label for="sucursal" class="form-label">Sucursal:</label>
                             <select class="form-select" name="sucursal">
-                                <option value="1">Baruta</option>
-                                <option value="2">Libertador</option>
-                                <option value="3">Chacao</option>
+                                <?php
+                                traer_sucursal($conn);
+                                ?>
                             </select>
                             <label for="proveedor" class="form-label">Proveedor:</label>
                             <select class="form-select" name="proveedor">
-                                <option value="1">TodoEstampas</option>
-                                <option value="2">TermosPlex</option>
-                                <option value="3">El Castillo</option>
+                                <?php
+                                    traer_proveedores($conn);
+                                ?>
                             </select>
                             <br>
                             <div class="row">
@@ -185,41 +187,25 @@
                                     </div>
                                 </div>
                                 <div class="row ms-1">
-                                    <label for="precio_compra" class="form-label">Precios de Compra:</label>
+                                    <label for="precio_compra" class="form-label">Precios de Compra y Venta:</label>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" placeholder="Precio $" name="precio_compra$">
-                                            <label for="precio_venta$" class="form-label">Precio $</label>
+                                            <input type="text" class="form-control" placeholder="Precio $" name="precio_compra">
+                                            <label for="precio_venta$" class="form-label">Precio de compra $</label>
                                         </div>
                                         <br>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" placeholder="Precio Bs" name="precio_comprabs">
-                                            <label for="precio_comprabs" class="form-label">Precio Bs</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row ms-1">
-                                    <label for="precio_venta" class="form-label">Precios de Venta:</label>
-                                    <div class="col-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" placeholder="Precio $" name="precio_venta$">
-                                            <label for="precio_venta$" class="form-label">Precio $</label>
-                                        </div>
-                                        <br>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" placeholder="Precio Bs" name="precio_ventabs">
-                                            <label for="precio_ventabs" class="form-label">Precio Bs</label>
+                                            <input type="text" class="form-control" placeholder="Precio $" name="precio_venta">
+                                            <label for="precio_venta$" class="form-label">Precio de venta $</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row ms-1">
                                     <div class="col-3">
                                         <div class="form-floating">
-                                            <input type="number" class="form-control" max="100" maxlength="3" placeholder="Cantidad" name="cantidad">
+                                            <input type="number" class="form-control" min = 1 max="100" maxlength="3" placeholder="Cantidad" name="cantidad">
                                             <label for="cantidad" class="form-label">Cantidad</label>
                                         </div>
                                     </div>
@@ -230,6 +216,8 @@
                                 </div>
                             </div>
                         </form>
+                        <!--Finaliza el formulario de registro de producto-->
+
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                         <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
