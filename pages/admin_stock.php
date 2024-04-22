@@ -30,7 +30,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="d-flex justify-content-end text-end mx-5">
                 <div class="navbar-nav bg-color-darkmagenta ps-5 pe-2 py-2 rounded-bottom">
-                    <a href="../index.html" class="link-white fs-5">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
+                    <a href="../index.php" class="link-white fs-5">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
                 </div>
             </div>
         </div>
@@ -155,7 +155,7 @@
                     <div class="modal-body modal-scroll">
                         
                         <!--Formulario de registro de producto-->
-                        <form action="#">
+                        <form action="#" method = "post">
                             <label for="sucursal" class="form-label">Sucursal:</label>
                             <select class="form-select" name="sucursal">
                                 <?php
@@ -215,24 +215,24 @@
                                     <textarea name="descripcion" class="form-control ms-2" Placeholder="Descripción" rows="4" style="resize: none;"></textarea>
                                 </div>
                             </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
+                                    <div class="contenido">
+                                        <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/cross30.png" width="30px"></span>
+                                        <input type="reset" class="texto fw-bold" style="color: white;" value="CANCELAR">
+                                    </div>
+                                </button>
+                                <button class="button-add fw-bold" data-bs-dismiss="modal">
+                                    <div class="contenido">
+                                        <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/check24x24.svg" width="30px"></span>
+                                        <input type="submit" class="texto fw-bold" style="color: white;" id="verificar" value="REGISTRAR">
+                                    </div>
+                                </button>
+                            </div>
                         </form>
                         <!--Finaliza el formulario de registro de producto-->
-
                     </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
-                            <div class="contenido">
-                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/cross30.png" width="30px"></span>
-                                <input type="reset" class="texto fw-bold" style="color: white;" value="CANCELAR">
-                            </div>
-                        </button>
-                        <button class="button-add fw-bold" data-bs-dismiss="modal">
-                            <div class="contenido">
-                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/check24x24.svg" width="30px"></span>
-                                <input type="submit" class="texto fw-bold" style="color: white;" id="verificar" value="REGISTRAR">
-                            </div>
-                        </button>
-                    </div>
+                    
                 </div>
             </div>
         </div>        
