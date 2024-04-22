@@ -89,7 +89,7 @@
                         <section class="container text-center ms-1 d-sm-block">
                             <div class="row ms-5 mb-2">
                                 <div class="col d-lg-none mt-2">
-                                    <button class="button-sm-add fw-bold">
+                                    <button class="button-sm-add fw-bold" data-bs-target="#userAdd"  data-bs-toggle="modal">
                                         <div class="contenido">
                                           <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/add32x32.png"></span>
                                           <span class="texto">AGREGAR</span>
@@ -97,7 +97,7 @@
                                     </button>
                                 </div>
                                 <div class="col d-lg-none mt-2">
-                                    <button class="button-sm-edit fw-bold">
+                                    <button class="button-sm-edit fw-bold" data-bs-target="#userEdit" data-bs-toggle="modal">
                                         <div class="contenido">
                                           <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/edit24x24.png"></span>
                                           <span class="texto">EDITAR</span>
@@ -105,7 +105,7 @@
                                     </button>                              
                                 </div>
                                 <div class="col d-lg-none my-2">
-                                    <button class="button-sm-delete fw-bold">
+                                    <button class="button-sm-delete fw-bold" data-bs-target="#borrar" data-bs-toggle="modal">
                                         <div class="contenido">
                                           <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png"></span>
                                           <span class="texto">BORRAR</span>
