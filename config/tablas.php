@@ -35,6 +35,5 @@ function llenar_usuarios($conn){
             <td>'.$users["cedula"].'</td>
         </tr>';
     }
-
 }
 ?>

@@ -1,7 +1,6 @@
 <?php
     require_once "../config/conexionDB.php";
     include '../config/tablas.php';
-    include '../config/botones.php';
 ?>  
 
 <!DOCTYPE html>
@@ -79,6 +78,7 @@
                                 </div>
                             </button>                              
                         </div>
+
                         <!--Aqui finaliza el recorte del include-->
                     </div>
                 </aside>

@@ -1,6 +1,7 @@
 <?php
     require_once "../config/conexionDB.php";
     include '../config/tablas.php';
+    include '../config/registroBD.php';
 ?>  
 <!DOCTYPE html>
 <html lang="en">
