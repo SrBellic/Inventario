@@ -30,7 +30,7 @@
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="d-flex justify-content-end text-end mx-5">
                 <div class="navbar-nav bg-color-darkmagenta ps-5 pe-2 py-2 rounded-bottom">
-                    <a href="../index.html" class="link-white fs-5">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
+                    <a href="../index.php" class="link-white fs-5">Cerrar Sesión<img src="../assets/favicons/system/icons8-logout-48.png" width="32px" alt="Cerrar Sesión"></a>
                 </div>
             </div>
         </div>
