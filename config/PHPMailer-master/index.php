@@ -33,7 +33,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Contraseña nueva';
-    $mail->Body    = '<h1 class="text-center fw-bold">Nombre de usuario: '.$name.'</h1><br>
+    $mail->Body    = '<h1 class="text-center fw-bold">Nombre de usuario: '.$user.'</h1><br>
     <h1 class="text-center fw-bold">Contraseña nueva: '.$pass.'</h1>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
