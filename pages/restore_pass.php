@@ -65,6 +65,5 @@
                 </div>
             </div>
         </main>
-        <script src="../js/restore_pass.js"></script>
     </body>
 </html>

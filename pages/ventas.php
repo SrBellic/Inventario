@@ -1,3 +1,7 @@
+<?php
+    require_once "../config/conexionDB.php";
+    include '../config/tablas.php';
+?>  
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,131 +52,17 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Camisas</td>
-                                        <td>00#</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>gorras</td>
-                                        <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Termos</td>
-                                        <td>00#</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
-                                        <td>BsBsBs</td>
-                                        <td>####</td>
-                                    </tr>
+
+                                <?php 
+                                    llenar_inventario($conn);
+                                ?>    
+
                                 </tbody>
                             </table>
                         </div>
-                        <!--FIN: Ejemplo de como se veria la tabla de inventario-->
                     </div>
+                    <!--Fin de tabla en ventas-->
+                    
                     <div class="row mt-4 d-flex justify-content-end">
                         <button type="reset" class="button-delete fw-bold" data-bs-target="#del" data-bs-toggle="modal">
                             <div class="contenido">
@@ -199,10 +89,10 @@
                                 </thead>
                                 <tbody class="text-center">
                                     <tr>
-                                        <td>gorras</td>
+                                        <td>Tasa SV</td>
                                         <td>001</td>
-                                        <td>PROVEEDOR</td>
-                                        <td>$$$</td>
+                                        <td>CamisetasYa	</td>
+                                        <td>4$</td>
                                         <td>BsBsBs</td>
                                         <td>
                                             <!--Este campo es el contador reactivo-->

@@ -236,6 +236,8 @@
                 </div>
             </div>
         </div>        
+
+        <!--Seccion de edicion-->
         <div class="modal fade" id="edit" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
@@ -309,6 +311,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="modal fade" id="editar-t" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
@@ -343,6 +346,8 @@
                 </div>
             </div>
         </div>
+
+
         <div class="modal fade" id="del" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
