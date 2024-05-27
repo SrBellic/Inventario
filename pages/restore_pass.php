@@ -1,3 +1,7 @@
+<?php
+    require_once "../config/conexionDB.php";
+    include '../config/recuperar_ps.php';
+?>    
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,10 +24,14 @@
                     </picture>
                 </div>
                 <div class="col py-5" id="formulario">
-                    <form id="formulario-recuperacion" class="container py-5">
+
+                    <form method="get" action="#" id="formulario-recuperacion" class="container py-5">
+                        
                         <label for="mail" class="form-label fs-4">Correo de Recuperación<img src="../assets/favicons/system/restore24x24.png" class="mb-1 ms-1" width="24px"></label>
-                        <input type="email" class="form-control my-3 shadow" required name="mail" id="email">
+                        <input type="email" class="form-control my-3 shadow" required name="email" id="email">
                         <div class="row d-flex justify-content-center">
+                        
+                            <!--Esta duplicado por responsive-->
                             <div class="col d-flex justify-content-end">
                                 <div class="d-lg-block d-md-none">
                                     <a class="button-sm-delete my-3 me-3 fw-bold link-white" href="../index.php">
@@ -42,6 +50,7 @@
                                     </a>
                                 </div>
                             </div>
+
                             <div class="col d-flex justify-content-start">
                                 <div class="d-lg-block d-md-none">
                                     <button class="button-sm-add my-3 fw-bold">
