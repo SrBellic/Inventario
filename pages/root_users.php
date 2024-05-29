@@ -75,7 +75,7 @@
                             <button class="button-delete fw-bold" data-bs-target="#borrar" data-bs-toggle="modal">
                                 <div class="contenido">
                                   <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png"></span>
-                                  <span class="texto">BORRAR</span>
+                                  <span class="texto">ELIMINAR</span>
                                 </div>
                             </button>                              
                         </div>
@@ -129,7 +129,7 @@
                         </thead>
                         <tbody class="text-center">
                             <?php
-                            llenar_usuarios($conn);
+                                llenar_usuarios($conn);
                             ?>
                         </tbody>
                     </table>
@@ -138,12 +138,12 @@
                 Inicia aqui-->
             </div>
 
-            <!--Modal Label-->
+            <!--Modal Eliminar-->
             <div class="modal fade" id="borrar" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -151,7 +151,6 @@
                         <table id="tablaDelete" class="table table-hover border shadow">
                             <thead class="text-center">
                                 <tr>
-                                    <th>ID Usuario</th>
                                     <th>Tipo de Usuario</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
@@ -162,57 +161,9 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <tr>
-                                    <td>1</td>
-                                    <td>root</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>admin</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>empleado</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php
+                                    llenar_usuarios_borrar($conn);
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -233,6 +184,8 @@
                 </div>
                 </div>
             </div>
+
+            <!--Modal Eliminar-->
             <div class="modal fade" id="userEdit" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-centered">
                     <div class="modal-content">
@@ -255,54 +208,9 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <tr>
-                                    <td>root</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-edit fw-bold" data-bs-target="#editar-t" data-bs-toggle="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/edit24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>admin</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-edit fw-bold" data-bs-target="#editar-t" data-bs-toggle="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/edit24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>empleado</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-edit fw-bold" data-bs-target="#editar-t" data-bs-toggle="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/edit24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php
+                                    llenar_usuarios_editar($conn)
+                                ?> 
                             </tbody>
                         </table>
                         </div>
@@ -428,101 +336,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="borrar" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="text" id="searchDelete" class="form-control shadow mb-2" placeholder="Buscar...">
-                        <table id="tablaDelete" class="table table-hover border shadow">
-                            <thead class="text-center">
-                                <tr>
-                                    <th>ID Usuario</th>
-                                    <th>Tipo de Usuario</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Usuario</th>
-                                    <th>Correo</th>
-                                    <th>Cédula</th>
-                                    <th> </th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <td>1</td>
-                                    <td>root</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="car
-                                                acter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>admin</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>empleado</td>
-                                    <td>Diego</td>
-                                    <td>Torres</td>
-                                    <td>Usuario</td>
-                                    <td>example@mail.com</td>
-                                    <td>30.000.000</td>
-                                    <td>
-                                        <button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
-                                            <div class="contenido">
-                                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
-                                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
-                                            </div>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button type="reset" class="button-delete fw-bold" data-bs-dismiss="modal">
-                            <div class="contenido">
-                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/cross30.png" width="30px"></span>
-                                <input type="reset" class="texto fw-bold" style="color: white;" value="CANCELAR">
-                            </div>
-                        </button>
-                        <button class="button-add fw-bold" data-bs-dismiss="modal">
-                            <div class="contenido">
-                                <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/check24x24.svg" width="30px"></span>
-                                <input type="submit" class="texto fw-bold" style="color: white;" id="borrar" value="CONFIRMAR">
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                </div>
-            </div>
+
         <!--Termina aqui-->
 
         <script src="../js/button_edit.js"></script>

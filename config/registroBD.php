@@ -131,6 +131,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pass = pass_aleatoria(); //Esta es la contraseña generada
         $passEncript = encriptacion($pass);
         $registro_resultado = cargar_bd($conn, $usuario,$email, $user, $ci, $name, $apellido, $passEncript); //Resultados de la bd
+
+        $mensaje = '<h1 class="text-center fw-bold">Nombre de usuario: '.$user.'</h1><br>
+    <h1 class="text-center fw-bold">Contraseña nueva: '.$pass.'</h1>';
         include ('PHPMailer-master/index.php');
     }
     //La variable $error es la que debes imprimir en caso de fallo
