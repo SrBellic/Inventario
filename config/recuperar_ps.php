@@ -9,6 +9,7 @@ function pass_aleatoria(){
     }
     return implode($pass);
 }
+
 function email_bd($conn, $email){
     // Verificar si el correo electrónico ya existe
     $query = "SELECT * FROM usuarios WHERE correo = :email";
@@ -18,7 +19,23 @@ function email_bd($conn, $email){
 
     if ($row) {
         $pass = pass_aleatoria();
-        return $pass;
+        $passEncript = password_hash($pass,PASSWORD_BCRYPT);
+
+        try {
+            // Insertar el nuevo usuario en la tabla tabla_usuarios con tipo de usuario 'user' (ID 1)
+            $query = "UPDATE `usuarios` SET `contraseña`= :pass  WHERE `correo` = :email";
+            $statement = $conn->prepare($query);
+            $result = $statement->execute(array(":pass"=>$passEncript,":email" => $email));
+
+            if ($result) {
+                return $pass;
+            } else {
+                // Error al registrar, mostrar mensaje de error
+                return "";
+            }
+        } catch (PDOException $e) {
+            return ""; // Imprime el mensaje de error de PDO
+        }
     }
     else{
         return "";
