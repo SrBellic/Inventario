@@ -1,16 +1,19 @@
-let incrementar = document.getElementById('incrementar')
-let decrementar = document.getElementById('decrementar')
-let cantidad = document.getElementById('count')
-let count=0
+let incrementar = document.getElementById('incrementar'); //Boton de incrementar
+let decrementar = document.getElementById('decrementar'); //Boton de decrementar
+let cantidad = document.getElementById('count'); //contador visible
+let countInput = document.getElementById('count_hidden'); //contador del input escondido
+let count = 0;
 
-incrementar.addEventListener('click', ()=>{
-    count++
-    cantidad.innerHTML = count
-})
-decrementar.addEventListener('click', ()=>{
+incrementar.addEventListener('click', () => {
+    count++; //contador creciente
+    cantidad.innerHTML = count;
+    countInput.value = count; 
+});
+
+decrementar.addEventListener('click', () => {
     if (count > 1) {
-        count--;
+        count--; //contador decreciente
         cantidad.innerHTML = count;
+        countInput.value = count; 
     }
-})
-
+});

@@ -96,21 +96,29 @@
                                         <td>BsBsBs</td>
                                         <td>
                                             <!--Este campo es el contador reactivo-->
-                                            <span id="count">0</span><!--Contador-->
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col-6">
-                                                    <!--Boton de incrementar-->
-                                                    <button class="ms-3 button-magenta" id="decrementar">-</button>
+                                            <form action="#" method="POST">
+                                                <span id="count">0</span><!--Contador-->
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-6">
+                                                        <!--Boton de incrementar-->
+                                                        <button class="ms-3 button-magenta" id="decrementar">-</button>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <!--Boton de decrementar-->
+                                                        <button class="button-magenta" id="incrementar">+</button>
+                                                    </div>
+                                                    <input type="hidden" name="count" id="count_hidden" value="0">
+                                                    <!--Input escondido para la lectura de PHP-->
                                                 </div>
-                                                <div class="col-6">
-                                                    <!--Boton de decrementar-->
-                                                    <button class="button-magenta" id="incrementar">+</button>
-                                                </div>
-                                            </div>
-                                            <!--Estos IDs deben ser leidos por el interprete 
-                                            para que PHP pueda realizar acciones con ellos.
-                                            EL foreach en PHP debe ser igual al foreach de
-                                            JavaScript para que actuen de forma simultanea.-->
+                                            </form>
+                                            <!--Este formulario ya envia informacion con PHP.
+                            
+                                                    $count=$_POST['count'];
+                                                    echo $count;
+                                                
+                                                Puedes hacer pruebas con este fragmento de PHP, si
+                                                captura. Conectalo a la BBDD y funciona solo.
+                                            -->
                                         </td>
                                     </tr>
                                     <tr>
