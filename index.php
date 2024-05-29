@@ -39,7 +39,7 @@
                                 </form>
                                 <div class="text-center">
                                     <br>
-                                    <h6>Olvidé mi contraseña. <a href="pages/restore_pass.html">Recuperar</a>.</h6>
+                                    <h6>Olvidé mi contraseña. <a href="pages/restore_pass.php">Recuperar</a>.</h6>
                                 </div>
                             </section>
                         </div>

@@ -37,6 +37,51 @@ function llenar_usuarios($conn){
     }
 }
 
+function llenar_usuarios_borrar($conn){
+    $consulta = "SELECT `tipo_usuario`,`nombre`,`apellido`,`usuario`,`correo`,`cedula` 
+    FROM `usuarios` WHERE 1";
+    //Se ejecuta la consulta
+    $resultado = $conn->query($consulta);
+    while ($users = $resultado->fetch(PDO::FETCH_ASSOC)) {
+        echo '<tr>
+            <td>'.$users["tipo_usuario"].'</td>
+            <td>'.$users["nombre"].'</td>
+            <td>'.$users["apellido"].'</td>
+            <td>'.$users["usuario"].'</td>
+            <td>'.$users["correo"].'</td>
+            <td>'.$users["cedula"].'</td>
+            <td>'.'<button class="button-mini-delete fw-bold" data-bs-dismiss="modal">
+                    <div class="contenido">
+                        <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/delete24x24.png" width="20px"></span>
+                        <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
+                    </div>
+            </button>'.'</td>
+        </tr>';
+    }
+}
+
+function llenar_usuarios_editar($conn){
+    $consulta = "SELECT `tipo_usuario`,`nombre`,`apellido`,`usuario`,`correo`,`cedula` 
+    FROM `usuarios` WHERE 1";
+    //Se ejecuta la consulta
+    $resultado = $conn->query($consulta);
+    while ($users = $resultado->fetch(PDO::FETCH_ASSOC)) {
+        echo '<tr>
+            <td>'.$users["tipo_usuario"].'</td>
+            <td>'.$users["nombre"].'</td>
+            <td>'.$users["apellido"].'</td>
+            <td>'.$users["usuario"].'</td>
+            <td>'.$users["correo"].'</td>
+            <td>'.$users["cedula"].'</td>
+            <td>'.'<button class="button-mini-edit fw-bold" data-bs-target="#editar-t" data-bs-toggle="modal">
+                <div class="contenido">
+                    <span class="caracter ms-1 mb-1"><img src="../assets/favicons/system/edit24x24.png" width="20px"></span>
+                    <input type="submit" class="texto fw-bold" style="color: white;" id="borrarFila">
+                </div>
+            </button>'.'</td>
+        </tr>';
+    }
+}
 //Esta funcion muestra las sucurles durante el registro
 function traer_sucursal($conn){
     $consulta = "SELECT `id_sucursal`,`sucursal` FROM `sucursales` WHERE 1";
@@ -56,5 +101,4 @@ function traer_proveedores($conn){
         echo '<option value='.$prov["id_proveedores"].'>'.$prov["proveedores"].'</option>';
     }
 }
-
 ?>
