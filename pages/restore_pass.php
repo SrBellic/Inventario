@@ -15,6 +15,7 @@
         <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
         <title>Recuperar Contraseña</title>
     </head>
+
     <body class="bg-color-magenta pt-5 mt-5">
         <main class="container bg-white rounded px-4 mt-5 w-75">
             <div class="row">
@@ -25,7 +26,7 @@
                 </div>
                 <div class="col py-5" id="formulario">
 
-                    <form method="get" action="#" id="formulario-recuperacion" class="container py-5">
+                    <form action="#" method="post" id="formulario-recuperacion" class="container py-5">
                         
                         <label for="mail" class="form-label fs-4">Correo de Recuperación<img src="../assets/favicons/system/restore24x24.png" class="mb-1 ms-1" width="24px"></label>
                         <input type="email" class="form-control my-3 shadow" required name="email" id="email">

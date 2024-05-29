@@ -25,14 +25,18 @@ function email_bd($conn, $email){
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
-    $email = $_GET['email'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $email = $_POST['email'];
     $pass = email_bd($conn, $email);
     if($pass != ""){
         $mensaje = "<h1>Tu nueva contraseña es:</h1>
         <br>
-        <b>".$pass."</b>";
+        <h2><b>".$pass."</b><h2>";
         include ('PHPMailer-master/index.php');
+    }else{
+        $error = "Error, este correo no se encuentra registrado en nuestra base de datos";
+        echo "<h1>$error</h1>";
     }
 }
 
