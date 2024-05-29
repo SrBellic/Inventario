@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $error = "Error, este correo no se encuentra registrado en nuestra base de datos";
         echo "<h1>$error</h1>";
-    }
+        }
 }
 
 ?>
